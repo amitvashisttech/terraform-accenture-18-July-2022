@@ -10,11 +10,11 @@ You need to a IAM User - > Login -> AWS Console -> Search (IAM) -> Create User (
 ## Now export the AWS Keys into Env. Variables
 
 ```
-echo "export AWS_ACCESS_KEY_ID="XXXXXXXXXXXX" " >> .bashrc
+echo "export AWS_ACCESS_KEY_ID="XXXXXXXXXXXX" " >> ~/.bashrc
 ```
 
 ```
-echo "export AWS_SECRET_ACCESS_KEY="XXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYY" " >>  .bashrc
+echo "export AWS_SECRET_ACCESS_KEY="XXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYY" " >>  ~/.bashrc
 ```
 
 ```
