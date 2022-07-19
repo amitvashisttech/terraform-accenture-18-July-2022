@@ -18,7 +18,7 @@ echo "export AWS_SECRET_ACCESS_KEY="XXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYY" " >>  ~/.
 ```
 
 ```
-source  .bashrc
+source ~/.bashrc
 ```
 
 ```
