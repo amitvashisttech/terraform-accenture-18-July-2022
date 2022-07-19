@@ -1,5 +1,8 @@
 provider "aws" {
   region = "us-east-1"
+  # Note: Please don't use this section for AWS Keys, this is only of ref. 
+  # access_key = "XXXXXXX"
+  # secret_key = "YYYYYYY"
 }
 
 resource "aws_instance" "web" {

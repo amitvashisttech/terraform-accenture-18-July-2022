@@ -62,3 +62,8 @@ terraform apply <plan-name>
 ```
 terraform apply --auto-approve 
 ```
+
+## Destory a target resource. 
+```
+terraform destroy -target aws_instance.frontend[0]
+```
