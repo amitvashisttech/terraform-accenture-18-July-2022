@@ -10,3 +10,9 @@ module "backend" {
   region = var.backend_region
 }
 
+
+
+module "myec2" { 
+  source = "./modules/ec2"
+}
+
