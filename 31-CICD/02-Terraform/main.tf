@@ -64,7 +64,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
 
    security_rule {
       name                       = "tomcat"
-      priority                   = 1005
+      priority                   = 1006
       direction                  = "Inbound"
       access                     = "Allow"
       protocol                   = "Tcp"
