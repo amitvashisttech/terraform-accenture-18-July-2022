@@ -10,6 +10,9 @@
 - name: Deploy Custom Web Page 
   copy: src=files/index.html dest=/var/www/html/index.html
 
+- name: Deploy Custom Jenkins Web Page 
+  copy: src=files/jenkins.html dest=/var/www/html/jenkins.html
+
 - name: Download Required Image
   get_url: url="https://www.mariomayhem.com/downloads/wallpapers/7/nsmb_wp7_1280.jpg"  dest=/var/www/html/mario.jpg mode=0755
 
