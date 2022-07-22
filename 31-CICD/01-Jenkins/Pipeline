@@ -1,26 +1,32 @@
 node {
-    
+
   stage('Git-CheckOut') {
     git branch: 'main', url: 'https://github.com/amitvashisttech/terraform-accenture-18-July-2022.git'
   }
-  
-  
- def project_path="31-CICD/02-Terraform" 
- 
+
+
+ def project_path="31-CICD/02-Terraform"
+
  dir(project_path) {
-     
+
+    # Note : Please replace your correct storage account for Terraform Remote State Management 
+
+    stage('Configure ST Account for terraform State - Ready for Terraform') {
+      sh label: 'Jenkins', script: " sed -i 's/tstate13637/tstate6401/g' terraform.tf"
+    }
+
     stage('Getting Ready for Ansible') {
       sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ansible-code/roles/webserver/files/jenkins.html"
+      sh label: 'Tomcat', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ansible-code/roles/tomcat/templates/jenkins.html"
     }
-    
     stage('Terraform Deploy') {
      sh label: 'Terraform', script: "/usr/bin/terraform init"
      sh label: 'Terraform', script: "/usr/bin/terraform apply --auto-approve"
-    }    
-    
- 
+    }  
+
+
  }
-    
-    
-    
+
+
+
 }
