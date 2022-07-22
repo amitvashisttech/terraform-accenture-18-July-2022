@@ -1,6 +1,6 @@
 resource "aws_instance" "dev-app" { 
-  ami = data.aws_ami.myami.id
-  #ami = "ami-05803413c51f242b7"
+  #ami = data.aws_ami.myami.id
+  ami = "ami-052efd3df9dad4825"
   instance_type = lookup(var.instance_type, terraform.workspace) 
   #key_name = var.key_name
   availability_zone = "us-east-1a"
