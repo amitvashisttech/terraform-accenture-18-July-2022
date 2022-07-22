@@ -1,0 +1,9 @@
+20.25.73.168
+
+[web]
+20.25.73.168
+
+
+[web:vars]
+ansible_ssh_user=amitvashist
+ansible_ssh_private_key_file="/root/.ssh/my-ssh-key.pem"
