@@ -1,0 +1,22 @@
+---
+
+- name: Create Dir to Downlaod Tomcat. 
+  file: path=/opt/SP/apps/tomcat state=directory
+
+- name: Install Java 1.8 
+  apt: name=default-jdk state=present
+
+
+- name: Download Tomcat
+  get_url: url=http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz dest=/opt/SP/apps/tomcat.tar.gz mode=0755 
+
+- name: Extract Tomcat
+  command: "tar zxf /opt/SP/apps/tomcat.tar.gz  -C /opt/SP/apps/tomcat --strip-components 1"
+
+- name: Copy Index Page Files
+  copy: src=templates/apps dest=/opt/SP/apps/tomcat/webapps/ mode=0644
+  notify: 
+  - Restart Tomcat
+
+- name: Copy Sample War Files
+  copy: src=templates/sample.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
