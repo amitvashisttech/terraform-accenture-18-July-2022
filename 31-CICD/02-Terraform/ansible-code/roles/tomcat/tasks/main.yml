@@ -14,7 +14,7 @@
   command: "tar zxf /opt/SP/apps/tomcat.tar.gz  -C /opt/SP/apps/tomcat --strip-components 1"
 
 - name: Copy Index Page Files
-  copy: src=templates/apps dest=/opt/SP/apps/tomcat/webapps/ mode=0644
+  copy: src=templates/jenkins.html dest=/opt/SP/apps/tomcat/webapps/ mode=0644
   notify: 
   - Restart Tomcat
 
